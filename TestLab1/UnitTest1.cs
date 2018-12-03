@@ -12,7 +12,6 @@ namespace Tests
         [SetUp]
         public void Setup()
         {
-
             trainList = new TrainCollection();
             trainList.addTrain(new Train("Sunny Valley", 1, new DateTime(2018, 2, 3, 9, 30, 00), 0, 10, 13, 1));
             trainList.addTrain(new Train("BSU", 2, new DateTime(2018, 7, 21, 11, 15, 00), 0, 1, 0, 15));
