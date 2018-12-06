@@ -13,31 +13,31 @@ namespace Tests
         public void Setup()
         {
             trainList = new TrainCollection();
-            trainList.addTrain(new Train("Sunny Valley", 1, new DateTime(2018, 2, 3, 9, 30, 00), 0, 10, 13, 1));
-            trainList.addTrain(new Train("BSU", 2, new DateTime(2018, 7, 21, 11, 15, 00), 0, 1, 0, 15));
-            trainList.addTrain(new Train("RAM", 3, new DateTime(2018, 9, 20, 18, 30, 00), 12, 8, 0, 0));
-            trainList.addTrain(new Train("BSU", 4, new DateTime(2018, 1, 7, 10, 00, 00), 9, 1, 3, 1));
-            trainList.addTrain(new Train("Sunny Valley", 5, new DateTime(2018, 4, 20, 8, 20, 00), 9, 8, 0, 1));
+            trainList.AddTrain(new Train("Sunny Valley", 1, new DateTime(2018, 2, 3, 9, 30, 00), 0, 10, 13, 1));
+            trainList.AddTrain(new Train("BSU", 2, new DateTime(2018, 7, 21, 11, 15, 00), 0, 1, 0, 15));
+            trainList.AddTrain(new Train("RAM", 3, new DateTime(2018, 9, 20, 18, 30, 00), 12, 8, 0, 0));
+            trainList.AddTrain(new Train("BSU", 4, new DateTime(2018, 1, 7, 10, 00, 00), 9, 1, 3, 1));
+            trainList.AddTrain(new Train("Sunny Valley", 5, new DateTime(2018, 4, 20, 8, 20, 00), 9, 8, 0, 1));
         }
 
         [Test]
-        public void test_getTrainByDestinationPoint()
+        public void Test_getTrainByDestinationPoint()
         {
-            List<Train> test1 = trainList.getTrainByDestinationPoint("Sunny Valley");
+            List<Train> test1 = trainList.GetTrainByDestinationPoint("Sunny Valley");
             Assert.AreEqual(2, test1.Count);
         }
 
         [Test]
-        public void test_getTrainByDestinationPointAndTime()
+        public void Test_getTrainByDestinationPointAndTime()
         {
-            List<Train> test1 = trainList.getTrainByDestinationPointAndTime("Sunny Valley", new TimeSpan(9, 00, 00));
+            List<Train> test1 = trainList.GetTrainByDestinationPointAndTime("Sunny Valley", new TimeSpan(9, 00, 00));
             Assert.AreEqual(1, test1.Count);
         }
 
         [Test]
-        public void test_getTrainByDestinationPointAndHaveGeneralSeats()
+        public void Test_getTrainByDestinationPointAndHaveGeneralSeats()
         {
-            List<Train> test1 = trainList.getTrainByDestinationPoint("Sunny Valley");
+            List<Train> test1 = trainList.GetTrainByDestinationPoint("Sunny Valley");
             Assert.AreEqual(2, test1.Count);
         }
     }

@@ -45,12 +45,12 @@ namespace Laba1.collection
             return 272706397 + EqualityComparer<List<Train>>.Default.GetHashCode(trainList);
         }
 
-        public void addTrain(Train train)
+        public void AddTrain(Train train)
         {
             this.trainList.Add(train);
         }
         
-        public List<Train> getTrainByNumber(int trainNumber)
+        public List<Train> GetTrainByNumber(int trainNumber)
         {
             List<Train> results = new List<Train>();
             foreach (Train train in trainList)
@@ -65,7 +65,7 @@ namespace Laba1.collection
         }
 
         //point a
-        public List<Train> getTrainByDestinationPoint(String destinationPoint)
+        public List<Train> GetTrainByDestinationPoint(string destinationPoint)
         {
             List<Train> results = new List<Train>();
             foreach (Train train in trainList)
@@ -81,7 +81,7 @@ namespace Laba1.collection
 
 
         //point b
-        public List<Train> getTrainByDestinationPointAndTime(String destinationPoint, TimeSpan departureTime)
+        public List<Train> GetTrainByDestinationPointAndTime(string destinationPoint, TimeSpan departureTime)
         {
             List<Train> results = new List<Train>();
             foreach (Train train in trainList)
@@ -96,7 +96,7 @@ namespace Laba1.collection
         }
 
         //point c
-        public List<Train> getTrainByDestinationPointAndHaveGeneralSeats(String destinationPoint)
+        public List<Train> GetTrainByDestinationPointAndHaveGeneralSeats(string destinationPoint)
         {
             List<Train> results = new List<Train>();
             foreach (Train train in trainList)
