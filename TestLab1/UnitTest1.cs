@@ -40,5 +40,6 @@ namespace Tests
             List<Train> test1 = trainList.GetTrainByDestinationPoint("Sunny Valley");
             Assert.AreEqual(2, test1.Count);
         }
+
     }
 }
