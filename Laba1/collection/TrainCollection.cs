@@ -12,27 +12,29 @@ namespace Laba1.collection
     {
         private List<Train> trainList;
 
+        public List<Train> TrainList { get => trainList; set => trainList = value; }
+
         public TrainCollection()
         {
-            this.trainList = new List<Train>();
+            this.TrainList = new List<Train>();
         }
         
         public TrainCollection(List<Train> trainList)
         {
-            this.trainList = trainList;
+            this.TrainList = trainList;
         }
 
         public override bool Equals(object obj)
         {
             var collection = obj as TrainCollection;
             return collection != null &&
-                   EqualityComparer<List<Train>>.Default.Equals(trainList, collection.trainList);
+                   TrainList.SequenceEqual(collection.TrainList);
         }
 
         public override string ToString()
         {
             StringBuilder result = new StringBuilder();
-            foreach (Train train in trainList)
+            foreach (Train train in TrainList)
             {
                 result.Append(train.ToString());
                 result.Append("/n");                
@@ -42,18 +44,18 @@ namespace Laba1.collection
 
         public override int GetHashCode()
         {
-            return 272706397 + EqualityComparer<List<Train>>.Default.GetHashCode(trainList);
+            return 272706397 + EqualityComparer<List<Train>>.Default.GetHashCode(TrainList);
         }
 
         public void AddTrain(Train train)
         {
-            this.trainList.Add(train);
+            this.TrainList.Add(train);
         }
         
         public List<Train> GetTrainByNumber(int trainNumber)
         {
             List<Train> results = new List<Train>();
-            foreach (Train train in trainList)
+            foreach (Train train in TrainList)
             {
                 if (train.TrainNumber.Equals(trainNumber))
                 {
@@ -68,7 +70,7 @@ namespace Laba1.collection
         public List<Train> GetTrainByDestinationPoint(string destinationPoint)
         {
             List<Train> results = new List<Train>();
-            foreach (Train train in trainList)
+            foreach (Train train in TrainList)
             {
                 if (train.DestinationPoint.Equals(destinationPoint))
                 {
@@ -84,7 +86,7 @@ namespace Laba1.collection
         public List<Train> GetTrainByDestinationPointAndTime(string destinationPoint, TimeSpan departureTime)
         {
             List<Train> results = new List<Train>();
-            foreach (Train train in trainList)
+            foreach (Train train in TrainList)
             {
                 if (train.DestinationPoint.Equals(destinationPoint) && train.DepartureTime.TimeOfDay > departureTime)
                 {
@@ -99,7 +101,7 @@ namespace Laba1.collection
         public List<Train> GetTrainByDestinationPointAndHaveGeneralSeats(string destinationPoint)
         {
             List<Train> results = new List<Train>();
-            foreach (Train train in trainList)
+            foreach (Train train in TrainList)
             {
                 if (train.DestinationPoint.Equals(destinationPoint) && train.NumberOfSeats.GeneralSeats > 0)
                 {
